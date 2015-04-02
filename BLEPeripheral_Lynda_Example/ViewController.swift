@@ -8,6 +8,10 @@
 //  Created by Michael Lehman on 4/6/14.
 //  Copyright (c) 2014 Michael Lehman. All rights reserved.
 
+// To Do Stop Advertising
+// clean and upload
+
+
 import UIKit
 import CoreBluetooth
 
@@ -96,7 +100,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate {
             var myDictionary: [NSObject:AnyObject]? = [:]
             
             //  THIS WORKED
-            myDictionary = [CBAdvertisementDataLocalNameKey : "Peripheral name"]
+            myDictionary = [CBAdvertisementDataLocalNameKey : "RedYoda",
+                         "kCBAdvDataServiceData" : CBAdvertisementDataServiceUUIDsKey ,
+                            ]  //the only two peripheral managed supported keys
+           //
             
             myPeripheralManager.startAdvertising(myDictionary!)
             
